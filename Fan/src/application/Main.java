@@ -37,14 +37,18 @@ public class Main extends Application {
 		Button btnCordReverse = new Button("2");
 		hbox.getChildren().addAll(btnCordSpeed, btnCordReverse);
 		hbox.setAlignment(Pos.CENTER);
-				
-	    btnCordSpeed.setMaxWidth(10);
-		btnCordSpeed.setMinHeight(250);
-		btnCordSpeed.setStyle("-fx-background-color: white; ");
 		
-		btnCordReverse.setMaxWidth(10);
-		btnCordReverse.setMinHeight(250);
-		btnCordReverse.setStyle("-fx-background-color: white; ");
+		Image img = new Image("cord.png");
+	    ImageView view = new ImageView(img);
+	    ImageView view2 = new ImageView(img);
+	    
+	    view.setFitHeight(200);
+	    view.setPreserveRatio(true);
+	    view2.setFitHeight(200);
+	    view2.setPreserveRatio(true);
+	    
+	    btnCordSpeed.setGraphic(view);
+	    btnCordReverse.setGraphic(view2);
 		
 		HBox.setHgrow(btnCordSpeed, Priority.ALWAYS);
 		
