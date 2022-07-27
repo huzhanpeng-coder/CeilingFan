@@ -24,8 +24,7 @@ import javafx.stage.*;
 import javafx.scene.*;
 
 public class Main extends Application {
-	
-	
+		
 	int valueSpeed = 600;
 	CeilingFan fan = new CeilingFan();
 	
@@ -93,8 +92,6 @@ public class Main extends Application {
 	
 	}
 	
-	
-	
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -105,7 +102,7 @@ class CeilingFan extends Pane {
 	private double width = 250;
 	private double height = 250;
 	private double radius = Math.min(width,height)*0.45;
-	private Arc arc[] = new Arc[6];
+	private Arc arc[] = new Arc[10];
 	private double startingAngle = 0;
 	private Circle circle = new Circle(width/64,height/64, radius);
 	
@@ -114,8 +111,8 @@ class CeilingFan extends Pane {
 		circle.setFill(Color.WHITE);
 		getChildren().add(circle);
 		
-		for (int i = 0 ; i<6; i++) {
-			arc[i] = new Arc(width/64, height/64, radius*0.9, radius*0.9, startingAngle+i*90, 35);
+		for (int i = 0 ; i<10; i++) {
+			arc[i] = new Arc(width/64, height/64, radius*0.9, radius*0.9, startingAngle+i*60, 25);
 			arc[i].setFill(Color.GREEN);
 			arc[i].setType(ArcType.ROUND);
 			getChildren().addAll(arc[i]);
@@ -154,12 +151,12 @@ class CeilingFan extends Pane {
 		circle.setCenterX(width/64);
 		circle.setCenterY(height/64);
 		
-		for (int i=0 ; i<6; i++) {
+		for (int i=0 ; i<10; i++) {
 			arc[i].setRadiusX(radius*1.45);
 			arc[i].setRadiusY(radius*1.45);
 			arc[i].setCenterX(width/64);
 			arc[i].setCenterY(height/64);
-			arc[i].setStartAngle(startingAngle+i*90);
+			arc[i].setStartAngle(startingAngle+i*60);
 		}
 	}
 	
